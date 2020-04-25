@@ -5,7 +5,8 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
+    DetailView
 )
 
 
@@ -40,3 +41,8 @@ class TodoDeleteView(DeleteView):
     model = Todo
     template_name = 'todo/todo_delete.html'  # 刪除樣板
     success_url = '/todo'  # 刪除成功後要導向的網址
+
+
+class TodoDetailView(DetailView):
+    model = Todo
+    template_name = 'todo/todo_detail.html'
