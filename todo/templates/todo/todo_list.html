@@ -1,0 +1,22 @@
+<h1>To Do List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>待辦事項</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for todo in object_list %}
+            <tr>
+                <td>{{ todo.title }}</td>
+                <td>
+                    <a href="#">修改</a>
+                    <a href="#">刪除</a>
+                    <a href="#">明細</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
