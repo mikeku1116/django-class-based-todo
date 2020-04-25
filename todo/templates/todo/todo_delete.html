@@ -1,0 +1,7 @@
+是否確定刪除{{ todo.title }}?
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="確定" />
+    <a href="{% url 'todo:list' %}">取消</a>
+</form>

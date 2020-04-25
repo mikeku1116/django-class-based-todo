@@ -4,7 +4,8 @@ from .forms import TodoModelForm
 from django.views.generic import (
     ListView,
     CreateView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 
 
@@ -33,3 +34,9 @@ class TodoUpdateView(UpdateView):
     fields = ['title', 'finish']  # 要顯示及修改的欄位
     template_name = 'todo/todo_update.html'  # 修改樣板
     success_url = '/todo'  # 儲存成功後要導向的網址
+
+
+class TodoDeleteView(DeleteView):
+    model = Todo
+    template_name = 'todo/todo_delete.html'  # 刪除樣板
+    success_url = '/todo'  # 刪除成功後要導向的網址

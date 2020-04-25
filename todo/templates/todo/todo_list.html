@@ -19,7 +19,7 @@
                 <td>{{ todo.title }}</td>
                 <td>
                     <a href="{% url 'todo:update' todo.id %}">修改</a>
-                    <a href="#">刪除</a>
+                    <a href="{% url 'todo:delete' todo.id %}">刪除</a>
                     <a href="#">明細</a>
                 </td>
             </tr>
