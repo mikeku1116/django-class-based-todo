@@ -30,7 +30,7 @@ class TodoCreateView(CreateView):
 
 class TodoUpdateView(UpdateView):
     model = Todo
-    fields = ['title', 'finish']  # 要顯示及修改的欄位
+    form_class = TodoModelForm  # 使用的表單類別
     template_name = 'todo/todo_update.html'  # 修改樣板
     success_url = '/todo'  # 儲存成功後要導向的網址
 
