@@ -6,3 +6,6 @@ class TodoModelForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = ('title',)
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '待辦事項'})
+        }
