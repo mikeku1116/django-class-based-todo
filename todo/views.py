@@ -24,7 +24,7 @@ class TodoListView(ListView):
 
 class TodoCreateView(CreateView):
     model = Todo
-    fields = ['title']  # 要顯示及儲存的欄位
+    form_class = TodoModelForm  # 使用的表單類別
     success_url = '/todo'  # 儲存成功後要導向的網址
 
 
