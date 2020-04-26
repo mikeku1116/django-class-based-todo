@@ -11,17 +11,15 @@ from django.views.generic import (
 
 
 class TodoListView(ListView):
+    model = Todo
     queryset = Todo.objects.filter(finish=False)  # 指定查詢條件
+    template_name = 'todo/todo_list.html'  # 樣板路徑
 
     # 要傳遞的資料
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = TodoModelForm()
+        context["form"] = TodoModelForm()  # 資料模型表單
         return context
-
-    # POST請求時所要做的事情
-    def post(self, request, *args, **kwargs):
-        return TodoCreateView.as_view()(request)
 
 
 class TodoCreateView(CreateView):
